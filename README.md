@@ -1,50 +1,157 @@
-# Vite & HeroUI Template
+# 📊 AI/ML Integration for Emotion Recognition System
 
-This is a template for creating applications using Vite and HeroUI (v2).
+## 🎯 Objective
+Enhance the **Emotion Recognition System** with AI/ML capabilities to:
+- Train custom emotion detection models.
+- Analyze datasets for improved accuracy.
+- Run real-time predictions using trained models.
 
-[Try it on CodeSandbox](https://githubbox.com/frontio-ai/vite-template)
+This repository contains the **Web-UI** component for the Audio-Visual Emotion Recognition System. It is built using **React**, **TypeScript**, and **Vite**, providing a fast and modern development environment. The Web-UI serves as the frontend interface for interacting with the system.
 
-## Technologies Used
+## 🛠️ Core Features/Progress update
 
-- [Vite](https://vitejs.dev/guide/)
-- [HeroUI](https://heroui.com)
-- [Tailwind CSS](https://tailwindcss.com)
-- [Tailwind Variants](https://tailwind-variants.org)
-- [TypeScript](https://www.typescriptlang.org)
-- [Framer Motion](https://www.framer.com/motion)
+| **Feature**                 | **Description**                                                                                  | **Priority** |
+|-----------------------------|--------------------------------------------------------------------------------------------------|--------------|
+| **Dataset Upload**           | Upload custom datasets (CSV, JSON, Images, Audio).                                              | ⭐⭐⭐⭐        |
+| **Preprocessing Pipeline**   | Normalize data, extract features (e.g., facial landmarks, audio frequencies).                    | ⭐⭐⭐⭐        |
+| **Model Training Interface** | UI for selecting model types (CNN, RNN, etc.), hyperparameters, and managing training sessions.  | ⭐⭐⭐⭐        |
+| **Live Emotion Detection**   | Apply trained models for real-time emotion recognition using webcam and microphone input.        | ⭐⭐⭐⭐        |
+| **Model Evaluation**         | View metrics like accuracy, precision, recall, and F1-score after training.                       | ⭐⭐⭐         |
+| **Pre-trained Models**       | Access base models trained on datasets like FER2013 and RAVDESS for quick deployment.           | ⭐⭐⭐         |
+| **Model Export/Import**      | Save trained models and reload them later for prediction or retraining.                         | ⭐⭐          |
 
-## How to Use
 
-To clone the project, run the following command:
+## UML Diagrams
 
-```bash
-git clone https://github.com/frontio-ai/vite-template.git
+### 1. Class Diagram (High-Level System)
+![Class Diagram](./src/assets/Class%20Diagram%20(High-Level%20System)%20.png)
+
+### 2. Deployment Diagram for Emotion Recognition
+![Deployment Diagram](./src/assets/Deployment%20Diagram%20for%20Emotion%20Recognition.png)
+
+### 3. Sequence Diagram (Emotion Detection Flow)
+![Sequence Diagram](./src/assets/Sequence%20Diagram%20(Emotion%20Detection%20Flow)%20.png)
+
+---
+
+## Features
+
+- **React + TypeScript**: Ensures type safety and modular development.
+- **Vite**: Provides a fast build system with Hot Module Replacement (HMR).
+- **ESLint Integration**: Includes linting rules for maintaining code quality.
+- **Audio-Visual Emotion Analysis**: A user-friendly interface to interact with the backend emotion recognition system.
+
+---
+
+## Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+- **Node.js** (v16 or higher)
+- **npm** or **yarn**
+
+---
+
+## Getting Started
+
+Follow these steps to set up and run the project locally:
+
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/Audio-Visual-Emotion-Recognition-System/Web-UI.git
+   cd Web-UI
+   ```
+
+2. **Install Dependencies**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. **Run the Development Server**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+4. Open your browser and navigate to `http://localhost:3000`.
+
+---
+
+## Project Structure
+
+```
+Web-UI/
+├── src/                  # Source code
+│   ├── components/       # React components
+│   ├── pages/            # Application pages
+│   ├── assets/           # Static assets (images, styles, etc.)
+│   └── App.tsx           # Main application file
+├── public/               # Public files served directly
+├── package.json          # Project dependencies and scripts
+├── tsconfig.json         # TypeScript configuration
+└── vite.config.ts        # Vite configuration file
 ```
 
-### Install dependencies
+---
 
-You can use one of them `npm`, `yarn`, `pnpm`, `bun`, Example using `npm`:
+## ESLint Configuration
 
-```bash
-npm install
-```
+This project includes ESLint for code linting. To expand the configuration for production:
 
-### Run the development server
+1. **Update `parserOptions`** in the ESLint configuration:
+   ```javascript
+   parserOptions: {
+     project: ['./tsconfig.node.json', './tsconfig.app.json'],
+     tsconfigRootDir: import.meta.dirname,
+   }
+   ```
 
-```bash
-npm run dev
-```
+2. **Replace `tseslint.configs.recommended` with stricter rules:**
+   - `tseslint.configs.recommendedTypeChecked`
+   - `tseslint.configs.strictTypeChecked`
 
-### Setup pnpm (optional)
+3. **Optionally add stylistic rules:**
+   - `...tseslint.configs.stylisticTypeChecked`
 
-If you are using `pnpm`, you need to add the following code to your `.npmrc` file:
+4. **Install and configure `eslint-plugin-react`:**
+   ```javascript
+   import react from 'eslint-plugin-react';
+   export default tseslint.config({
+     settings: { react: { version: '18.3' } },
+     plugins: { react },
+     rules: {
+       ...react.configs.recommended.rules,
+       ...react.configs['jsx-runtime'].rules,
+     },
+   });
+   ```
 
-```bash
-public-hoist-pattern[]=*@heroui/*
-```
+---
 
-After modifying the `.npmrc` file, you need to run `pnpm install` again to ensure that the dependencies are installed correctly.
+## Scripts
+
+The following scripts are available in `package.json`:
+
+- `dev`: Start the development server.
+- `build`: Build the project for production.
+- `lint`: Run ESLint to check code quality.
+
+---
+
+## Contribution Guidelines
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Commit your changes with clear messages.
+4. Submit a pull request.
+
+---
 
 ## License
 
-Licensed under the [MIT license](https://github.com/frontio-ai/vite-template/blob/main/LICENSE).
+This project is licensed under the MIT License.
