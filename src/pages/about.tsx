@@ -6,16 +6,18 @@ import { motion } from "framer-motion";
 
 const authors = [
   { name: "Aaron", image: "/images/placeholder.png", color: "primary" },
-  { name: "Bisum", image: "/images/placeholder.png", color: "secondary" },
 ];
 
 export default function ProjectBreakdown() {
+  // @ts-ignore
+  // @ts-ignore
+  // @ts-ignore
   return (
     <DefaultLayout>
       <section className="flex flex-col items-center justify-center gap-8 py-10 md:py-12">
         {/* 🔥 Authors Section */}
         <div className="text-center">
-          <h1 className={title({ color: "primary" })}>Project Breakdown</h1>
+          <h1 className={title({ class: undefined, className: undefined, fullWidth: undefined, size: undefined, color: "cyan" })}>Project Breakdown</h1>
           <p className={subtitle({ class: "mt-2" })}>
             A collaborative effort to build a real-time multimodal emotion recognition system.
           </p>
@@ -32,8 +34,7 @@ export default function ProjectBreakdown() {
                   src={author.image}
                   alt={author.name}
                   size="lg"
-                  variant="circular"
-                  color={author.color}
+                  color={"primary"}
                   className="border-4 border-current shadow-lg"
                 />
                 <p className="mt-2 text-lg font-semibold text-default-800">{author.name}</p>

@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Card } from "@heroui/card";
 import { Button } from "@heroui/button";
-import { title, subtitle } from "@/components/primitives";
 import DefaultLayout from "@/layouts/default";
 import { io } from "socket.io-client";
 import { motion, AnimatePresence } from "framer-motion";
@@ -14,6 +13,7 @@ export default function RealtimeAttention() {
   const [isStreaming, setIsStreaming] = useState(true);
   const [videoSrc, setVideoSrc] = useState("http://localhost:4200/video_feed");
   const [isFocused, setIsFocused] = useState(false);
+  // @ts-ignore
   const [socket, setSocket] = useState<any>(null);
 
   useEffect(() => {

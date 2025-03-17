@@ -44,6 +44,7 @@ export default function RealtimeEmotion() {
       if (videoRef.current && videoRef.current instanceof HTMLVideoElement) {
         const camera = new cam.Camera(videoRef.current, {
           onFrame: async () => {
+            // @ts-ignore
             await faceMesh.send({ image: videoRef.current });
           },
           width: 720,

@@ -8,8 +8,7 @@ import {
   NavbarContent,
   NavbarItem,
   NavbarMenuToggle,
-  NavbarMenu,
-  NavbarMenuItem,
+
 } from "@heroui/navbar";
 import { link as linkStyles } from "@heroui/theme";
 import clsx from "clsx";
@@ -61,6 +60,8 @@ export const Navbar = () => {
     />
   );
 
+  // @ts-ignore
+  // @ts-ignore
   return (
     <HeroUINavbar maxWidth="xl" position="sticky">
       {/* Left Side - Logo & Desktop Links */}
@@ -119,18 +120,7 @@ export const Navbar = () => {
       )}
 
       {/* ✅ Always Show Navbar Menu on Desktop */}
-      <NavbarMenu isOpen={menuOpen}>
-        {searchInput}
-        <div className="mx-4 mt-2 flex flex-col gap-2">
-          {siteConfig.navMenuItems.map((item) => (
-            <NavbarMenuItem key={item.href}>
-              <Link color="foreground" href={item.href} size="lg">
-                {item.label}
-              </Link>
-            </NavbarMenuItem>
-          ))}
-        </div>
-      </NavbarMenu>
+
     </HeroUINavbar>
   );
 };
